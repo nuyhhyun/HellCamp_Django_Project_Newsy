@@ -1,0 +1,14 @@
+.buttons button {
+    background-color: gray;
+    border: none;
+    color: white;
+    display: inline;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    align-items: stretch;
+    width: 100%;
+}
+.buttons {
+    display: flex;
+}

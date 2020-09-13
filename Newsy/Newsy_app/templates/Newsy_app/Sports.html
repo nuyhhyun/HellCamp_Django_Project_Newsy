@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="{% static 'css/design.css' %}">
+        <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+    </head>
+    <body>
+    <div>
+        <div class="buttons">
+            <button onclick="location.href='{% url 'button' category='news' next_button='Latest' %}'">Latest News</button>
+            <button onclick="location.href='{% url 'button' category='Politics' next_button='Politics' %}'">Politics News</button>
+            <button onclick="location.href='{% url 'button' category='Social' next_button='Social' %}'">Social News</button>
+            <button onclick="location.href='{% url 'button' category='Economy' next_button='Economy' %}'">Economy News</button>
+            <button onclick="location.href='{% url 'button' category='Local' next_button='Local' %}'">Local News</button>
+            <button onclick="location.href='{% url 'button' category='Global' next_button='Global' %}'">Global News</button>
+            <button onclick="location.href='{% url 'button' category='IT' next_button='IT' %}'">IT News</button>
+            <button onclick="location.href='{% url 'button' category='Enter' next_button='Entertain' %}'">Entertain News</button>
+            <button onclick="location.href='{% url 'button' category='Culture' next_button='Culture' %}'">Culture News</button>
+            <button onclick="location.href='{% url 'button' category='Column' next_button='Column' %}'">Column News</button>
+            <button onclick="location.href='{% url 'button' category='Photo' next_button='Photo' %}'">Photo News</button>
+            <button onclick="location.href='{% url 'button' category='Only' next_button='Scoop' %}'">Scoop News</button>
+        </div>
+        <h1 style="background: black; color: white; padding: 10px;">Sports News</h1>
+        <div class="container">
+        {% for i in infos %}
+        <div class="card">
+            <div class="title">
+                {{ i.title }}
+            </div>
+            <div class="post">
+                {{ i.des }} ...
+                <a href="{{ i.link }}" target="_blank">[더보기]</a>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    </body>
+</html>
